@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ecotrustia Solutions - Video Converter</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    
+
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Video Converter</h1>
+        <p>
+          Convert video files between different formats and resolutions quickly
+          and easily.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <h2>Convert Video Files</h2>
+      </div>
+      <div class="video-converter">
+        <div class="upload-area" id="upload-area">
+          <i class="fas fa-video"></i>
+          <p>Drag & Drop your video file here or click to browse</p>
+          <small>Supports MP4, AVI, MOV, MKV, WMV, FLV (Max: 100MB)</small>
+          <input type="file" id="file-input" accept="video/*" />
+        </div>
+
+        <div class="preview-container" id="preview-container">
+          <div class="file-info">
+            <div class="info-item">
+              <span>File Name:</span>
+              <span id="file-name">-</span>
+            </div>
+            <div class="info-item">
+              <span>File Size:</span>
+              <span id="file-size">-</span>
+            </div>
+            <div class="info-item">
+              <span>Duration:</span>
+              <span id="file-duration">-</span>
+            </div>
+            <div class="info-item">
+              <span>Format:</span>
+              <span id="file-format">-</span>
+            </div>
+            <div class="info-item">
+              <span>Resolution:</span>
+              <span id="file-resolution">-</span>
+            </div>
+          </div>
+
+          <div class="video-preview">
+            <video controls id="video-player" style="display: none"></video>
+          </div>
+
+          <div class="conversion-options">
+            <div class="option-group">
+              <label for="output-format">Output Format</label>
+              <select id="output-format">
+                <option value="mp4">MP4 (Most compatible)</option>
+                <option value="webm">WebM (Web optimized)</option>
+                <option value="mov">MOV (Apple devices)</option>
+                <option value="avi">AVI (Universal)</option>
+                <option value="mkv">MKV (High quality)</option>
+              </select>
+            </div>
+
+            <div class="option-group">
+              <label>Output Resolution</label>
+              <div class="resolution-options">
+                <div
+                  class="resolution-option active"
+                  data-width="1920"
+                  data-height="1080"
+                >
+                  1080p (Full HD)
+                </div>
+                <div
+                  class="resolution-option"
+                  data-width="1280"
+                  data-height="720"
+                >
+                  720p (HD)
+                </div>
+                <div
+                  class="resolution-option"
+                  data-width="854"
+                  data-height="480"
+                >
+                  480p (SD)
+                </div>
+                <div
+                  class="resolution-option"
+                  data-width="640"
+                  data-height="360"
+                >
+                  360p
+                </div>
+                <div
+                  class="resolution-option"
+                  data-width="426"
+                  data-height="240"
+                >
+                  240p
+                </div>
+                <div class="resolution-option" data-width="original">
+                  Original
+                </div>
+              </div>
+            </div>
+
+            <div class="quality-slider" id="quality-slider">
+              <label>Video Quality</label>
+              <div class="slider-container">
+                <input
+                  type="range"
+                  id="quality-value"
+                  min="1"
+                  max="10"
+                  value="7"
+                />
+                <span class="slider-value" id="quality-display">7 (Good)</span>
+              </div>
+              <div class="quality-presets">
+                <div class="quality-preset" data-value="3">Low (3)</div>
+                <div class="quality-preset" data-value="5">Medium (5)</div>
+                <div class="quality-preset active" data-value="7">Good (7)</div>
+                <div class="quality-preset" data-value="9">High (9)</div>
+                <div class="quality-preset" data-value="10">Best (10)</div>
+              </div>
+            </div>
+
+            <div class="option-group">
+              <label for="frame-rate">Frame Rate</label>
+              <select id="frame-rate">
+                <option value="original">Original</option>
+                <option value="30">30 fps (Standard)</option>
+                <option value="24">24 fps (Cinematic)</option>
+                <option value="60">60 fps (Smooth)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="conversion-result" id="conversion-result">
+          <div class="info-item">
+            <span>Output Format:</span>
+            <span id="output-format-display">-</span>
+          </div>
+          <div class="info-item">
+            <span>Output Resolution:</span>
+            <span id="output-resolution">-</span>
+          </div>
+          <div class="info-item">
+            <span>Estimated Size:</span>
+            <span id="output-size">-</span>
+          </div>
+        </div>
+
+        <div class="action-buttons">
+          <button id="convert-btn" class="btn btn-convert" disabled>
+            <i class="fas fa-exchange-alt"></i> Convert Video
+          </button>
+          <button id="reset-btn" class="btn btn-reset">
+            <i class="fas fa-redo"></i> Reset
+          </button>
+          <button id="download-btn" class="btn btn-download">
+            <i class="fas fa-download"></i> Download Converted Video
+          </button>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

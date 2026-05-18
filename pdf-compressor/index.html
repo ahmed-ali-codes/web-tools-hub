@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ecotrustia Solutions - Advanced PDF Compressor</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.16.0/pdf-lib.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    
+
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Advanced PDF Compressor</h1>
+        <p>
+          Reduce PDF file size significantly while preserving quality. Perfect
+          for email attachments and web uploads.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <h2>Compress PDF Files</h2>
+      </div>
+      <div class="pdf-compressor">
+        <div class="upload-area" id="upload-area">
+          <i class="fas fa-file-pdf"></i>
+          <p>Drag & Drop your PDF here or click to browse</p>
+          <small>Supports PDF files (Max: 25MB)</small>
+          <input type="file" id="file-input" accept=".pdf" />
+        </div>
+
+        <div class="preview-container" id="preview-container">
+          <div class="file-info">
+            <div class="info-item">
+              <span>File Name:</span>
+              <span id="file-name">-</span>
+            </div>
+            <div class="info-item">
+              <span>Original Size:</span>
+              <span id="original-size">-</span>
+            </div>
+            <div class="info-item">
+              <span>Pages:</span>
+              <span id="page-count">-</span>
+            </div>
+          </div>
+
+          <div class="compression-options">
+            <div class="option-group">
+              <label for="compression-method">Compression Method</label>
+              <select id="compression-method">
+                <option value="balanced">Balanced (Recommended)</option>
+                <option value="aggressive">Aggressive (Max Compression)</option>
+              </select>
+            </div>
+
+            <div class="compression-slider" id="compression-slider">
+              <label>Target Size Reduction</label>
+              <div class="slider-container">
+                <input
+                  type="range"
+                  id="compression-percent"
+                  min="10"
+                  max="90"
+                  value="50"
+                />
+                <span class="slider-value" id="compression-value">50%</span>
+              </div>
+              <div class="quality-presets">
+                <div class="quality-preset" data-value="30">Small (30%)</div>
+                <div class="quality-preset active" data-value="50">
+                  Medium (50%)
+                </div>
+                <div class="quality-preset" data-value="70">Large (70%)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="compression-result" id="compression-result">
+          <div class="info-item">
+            <span>Compressed Size:</span>
+            <span id="compressed-size">-</span>
+          </div>
+          <div class="info-item">
+            <span>Reduction:</span>
+            <span id="savings" class="savings">-</span>
+          </div>
+        </div>
+
+        <div class="action-buttons">
+          <button id="compress-btn" class="btn btn-compress" disabled>
+            <i class="fas fa-compress-alt"></i> Compress PDF
+          </button>
+          <button id="reset-btn" class="btn btn-reset">
+            <i class="fas fa-redo"></i> Reset
+          </button>
+          <button id="download-btn" class="btn btn-download">
+            <i class="fas fa-download"></i> Download Compressed PDF
+          </button>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

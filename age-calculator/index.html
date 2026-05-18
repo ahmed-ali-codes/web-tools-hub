@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ecotrustia Solutions - Age Calculator</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Age Calculator</h1>
+        <p>
+          Calculate your exact age in years, months and days. Perfect for
+          birthdays, anniversaries, or any important date tracking.
+        </p>
+      </div>
+    </section>
+
+    <!-- Age Calculator Section -->
+    <section class="section">
+      <div class="section-title">
+        <h2>Calculate Your Exact Age</h2>
+      </div>
+      <div class="age-calculator">
+        <div class="dob-input">
+          <div class="form-group">
+            <label for="birth-date">Date of Birth</label>
+            <input
+              type="date"
+              id="birth-date"
+              class="form-control"
+              max=""
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="as-of-date">As of Date (Optional)</label>
+            <input type="date" id="as-of-date" class="form-control" max="" />
+          </div>
+        </div>
+
+        <div class="result-display" id="result-display">
+          <div class="age-result" id="age-result">
+            0 years, 0 months, 0 days
+          </div>
+          <div class="result-label">Your Exact Age</div>
+        </div>
+
+        <button id="calculate-btn" class="btn calculate-btn">
+          Calculate Age
+        </button>
+      </div>
+
+      <!-- Features Section -->
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-birthday-cake"></i>
+          </div>
+          <h3>Precise Calculation</h3>
+          <p>
+            Get your exact age down to the day, accounting for leap years and
+            month lengths.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-calendar-alt"></i>
+          </div>
+          <h3>Any Date</h3>
+          <p>
+            Calculate age as of any date - past, present or future. Perfect for
+            planning.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-child"></i>
+          </div>
+          <h3>Child Ages</h3>
+          <p>
+            Track children's ages in years, months and days for developmental
+            milestones.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h3>Responsive Design</h3>
+          <p>Works perfectly on all devices from desktop to mobile.</p>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ecotrustia Solutions - Instagram Downloader</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Instagram Downloader</h1>
+        <p>
+          Download photos, videos, and reels from Instagram with ease. No login
+          required - just paste the URL and download!
+        </p>
+      </div>
+    </section>
+
+    <!-- Instagram Downloader Section -->
+    <section class="section">
+      <div class="section-title">
+        <h2>Download Instagram Media</h2>
+      </div>
+      <div class="instagram-downloader">
+        <div class="input-group">
+          <label for="instagram-url">Instagram URL</label>
+          <input
+            type="url"
+            id="instagram-url"
+            placeholder="https://www.instagram.com/p/..."
+          />
+        </div>
+
+        <div class="media-types">
+          <div class="media-type">
+            <input
+              type="radio"
+              id="type-auto"
+              name="media-type"
+              value="auto"
+              checked
+            />
+            <label for="type-auto">Auto Detect</label>
+          </div>
+          <div class="media-type">
+            <input
+              type="radio"
+              id="type-photo"
+              name="media-type"
+              value="photo"
+            />
+            <label for="type-photo">Photo</label>
+          </div>
+          <div class="media-type">
+            <input
+              type="radio"
+              id="type-video"
+              name="media-type"
+              value="video"
+            />
+            <label for="type-video">Video</label>
+          </div>
+          <div class="media-type">
+            <input type="radio" id="type-reel" name="media-type" value="reel" />
+            <label for="type-reel">Reel</label>
+          </div>
+        </div>
+
+        <button id="fetch-btn" class="btn">
+          <i class="fas fa-download"></i> Fetch Media
+        </button>
+
+        <div class="result-container" id="result-container">
+          <div class="media-preview" id="media-preview">
+            <!-- Media will be displayed here -->
+          </div>
+          <div class="download-options">
+            <div class="download-option">
+              <button id="download-hd" class="btn btn-download" disabled>
+                <i class="fas fa-download"></i> Download HD
+              </button>
+            </div>
+            <div class="download-option">
+              <button id="download-sd" class="btn btn-download" disabled>
+                <i class="fas fa-download"></i> Download SD
+              </button>
+            </div>
+            <div class="download-option">
+              <button id="download-audio" class="btn btn-download" disabled>
+                <i class="fas fa-music"></i> Audio Only
+              </button>
+            </div>
+          </div>
+          <button id="new-btn" class="btn btn-new">
+            <i class="fas fa-redo"></i> New Download
+          </button>
+        </div>
+      </div>
+
+      <!-- Features Section -->
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-user-shield"></i>
+          </div>
+          <h3>No Login Required</h3>
+          <p>
+            Download content without logging in to Instagram. Your privacy is
+            always protected.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-film"></i>
+          </div>
+          <h3>Multiple Formats</h3>
+          <p>
+            Supports photos, videos, stories, IGTV, and reels. Get the content
+            in your preferred format.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-tachometer-alt"></i>
+          </div>
+          <h3>Fast Downloads</h3>
+          <p>
+            High-speed downloads with no waiting time. Get your media instantly.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h3>Mobile Friendly</h3>
+          <p>Works perfectly on all devices from desktop to mobile.</p>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

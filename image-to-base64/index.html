@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ecotrustia Solutions - Image to Base64 Converter</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Image to Base64 Converter</h1>
+        <p>
+          Convert your images to Base64 encoded strings for direct use in HTML,
+          CSS, or JavaScript. Perfect for embedding images without separate
+          files.
+        </p>
+      </div>
+    </section>
+
+    <!-- Base64 Converter Section -->
+    <section class="section">
+      <div class="section-title">
+        <h2>Convert Images to Base64</h2>
+      </div>
+      <div class="base64-converter">
+        <div class="upload-area" id="upload-area">
+          <i class="fas fa-cloud-upload-alt"></i>
+          <p>Drag & Drop your image here or click to browse</p>
+          <small>Supports JPG, PNG, WEBP (Max: 5MB)</small>
+          <input type="file" id="file-input" accept="image/*" />
+        </div>
+
+        <div
+          class="preview-container"
+          id="preview-container"
+          style="display: none"
+        >
+          <div class="image-preview">
+            <h3>Image Preview</h3>
+            <img id="preview-image" src="#" alt="Image preview" />
+          </div>
+          <div class="base64-result">
+            <h3>Base64 Result</h3>
+            <textarea
+              id="base64-output"
+              placeholder="Base64 encoded string will appear here..."
+              readonly
+            ></textarea>
+          </div>
+        </div>
+
+        <div class="image-info">
+          <div class="info-item">
+            <span>File Name:</span>
+            <span id="file-name">-</span>
+          </div>
+          <div class="info-item">
+            <span>File Size:</span>
+            <span id="file-size">-</span>
+          </div>
+          <div class="info-item">
+            <span>Dimensions:</span>
+            <span id="dimensions">-</span>
+          </div>
+          <div class="info-item">
+            <span>MIME Type:</span>
+            <span id="mime-type">-</span>
+          </div>
+        </div>
+
+        <div class="action-buttons">
+          <button id="convert-btn" class="btn btn-convert" disabled>
+            <i class="fas fa-exchange-alt"></i> Convert to Base64
+          </button>
+          <button id="copy-btn" class="btn btn-copy" disabled>
+            <i class="fas fa-copy"></i> Copy Base64
+          </button>
+          <button id="reset-btn" class="btn btn-reset">
+            <i class="fas fa-redo"></i> Reset
+          </button>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

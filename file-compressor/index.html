@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ecotrustia Solutions - File Compressor</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    
+
+    <section class="hero">
+      <div class="hero-content">
+        <h1>File Compressor</h1>
+        <p>
+          Compress ZIP, RAR, and other archive files to reduce size for easier
+          sharing and storage.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <h2>Compress Archive Files</h2>
+      </div>
+      <div class="file-compressor">
+        <div class="upload-area" id="upload-area">
+          <i class="fas fa-file-archive"></i>
+          <p>Drag & Drop your archive file here or click to browse</p>
+          <small>Supports ZIP, RAR, 7Z, TAR, GZ (Max: 100MB)</small>
+          <input type="file" id="file-input" accept=".zip,.rar,.7z,.tar,.gz" />
+        </div>
+
+        <div class="preview-container" id="preview-container">
+          <div class="file-info">
+            <div class="info-item">
+              <span>File Name:</span>
+              <span id="file-name">-</span>
+            </div>
+            <div class="info-item">
+              <span>Original Size:</span>
+              <span id="original-size">-</span>
+            </div>
+            <div class="info-item">
+              <span>File Type:</span>
+              <span id="file-type">-</span>
+            </div>
+            <div class="info-item">
+              <span>Contains:</span>
+              <span id="file-contents">-</span>
+            </div>
+          </div>
+
+          <div class="file-list" id="file-list" style="display: none">
+            <h4>Files in Archive:</h4>
+            <div id="file-items"></div>
+          </div>
+
+          <div class="compression-options">
+            <div class="option-group">
+              <label for="output-format">Output Format</label>
+              <select id="output-format">
+                <option value="zip">ZIP (Most compatible)</option>
+                <option value="zipx">ZIPX (Better compression)</option>
+                <option value="7z">7Z (Highest compression)</option>
+              </select>
+            </div>
+
+            <div class="compression-slider" id="compression-slider">
+              <label>Compression Level</label>
+              <div class="slider-container">
+                <input
+                  type="range"
+                  id="compression-level"
+                  min="1"
+                  max="9"
+                  value="5"
+                />
+                <span class="slider-value" id="compression-value"
+                  >5 (Medium)</span
+                >
+              </div>
+              <div class="compression-presets">
+                <div class="compression-preset" data-value="1">1 (Fastest)</div>
+                <div class="compression-preset" data-value="3">3 (Fast)</div>
+                <div class="compression-preset active" data-value="5">
+                  5 (Medium)
+                </div>
+                <div class="compression-preset" data-value="7">7 (High)</div>
+                <div class="compression-preset" data-value="9">9 (Maximum)</div>
+              </div>
+            </div>
+
+            <div class="option-group">
+              <label for="compression-method">Compression Method</label>
+              <select id="compression-method">
+                <option value="deflate">Deflate (Standard)</option>
+                <option value="lzma">LZMA (Better)</option>
+                <option value="ppmd">PPMd (Best for text)</option>
+                <option value="bzip2">BZip2 (Good balance)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="compression-result" id="compression-result">
+          <div class="info-item">
+            <span>Compressed Size:</span>
+            <span id="compressed-size">-</span>
+          </div>
+          <div class="info-item">
+            <span>Reduction:</span>
+            <span id="savings" class="savings">-</span>
+          </div>
+        </div>
+
+        <div class="action-buttons">
+          <button id="compress-btn" class="btn btn-compress" disabled>
+            <i class="fas fa-compress-alt"></i> Compress File
+          </button>
+          <button id="reset-btn" class="btn btn-reset">
+            <i class="fas fa-redo"></i> Reset
+          </button>
+          <button id="download-btn" class="btn btn-download">
+            <i class="fas fa-download"></i> Download Compressed File
+          </button>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

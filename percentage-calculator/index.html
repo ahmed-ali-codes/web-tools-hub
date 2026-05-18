@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ecotrustia Solutions - Percentage Calculator</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Percentage Calculator</h1>
+        <p>
+          Calculate percentages, increases, decreases, and differences between
+          values. Perfect for financial calculations, discounts, statistics, and
+          everyday math problems.
+        </p>
+      </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section class="section">
+      <div class="section-title">
+        <h2>Percentage Calculations</h2>
+      </div>
+      <div class="calculator-container">
+        <div class="calculator-tabs">
+          <button class="tab-btn active" data-tab="percentage">
+            Percentage
+          </button>
+          <button class="tab-btn" data-tab="increase">Increase</button>
+          <button class="tab-btn" data-tab="decrease">Decrease</button>
+          <button class="tab-btn" data-tab="difference">Difference</button>
+        </div>
+
+        <!-- Percentage Calculator -->
+        <div class="calculator-content active" id="percentage-content">
+          <div class="form-group">
+            <label for="percentage-value"
+              >What is
+              <input
+                type="number"
+                id="percentage-x"
+                class="form-control"
+                style="width: 80px; display: inline-block"
+                placeholder="15"
+                min="0"
+                step="0.01"
+              />% of
+              <input
+                type="number"
+                id="percentage-y"
+                class="form-control"
+                style="width: 80px; display: inline-block"
+                placeholder="200"
+                min="0"
+                step="0.01"
+              />?</label
+            >
+          </div>
+          <button class="btn" id="percentage-calculate">Calculate</button>
+          <div class="result-container" id="percentage-result">
+            <div class="result-value" id="percentage-result-value">30</div>
+            <div class="result-formula" id="percentage-result-formula">
+              15% × 200 = 30
+            </div>
+          </div>
+        </div>
+
+        <!-- Increase Calculator -->
+        <div class="calculator-content" id="increase-content">
+          <div class="form-group">
+            <label for="increase-value"
+              ><input
+                type="number"
+                id="increase-x"
+                class="form-control"
+                style="width: 80px; display: inline-block"
+                placeholder="200"
+                min="0"
+                step="0.01"
+              />
+              increased by
+              <input
+                type="number"
+                id="increase-y"
+                class="form-control"
+                style="width: 80px; display: inline-block"
+                placeholder="15"
+                min="0"
+                step="0.01"
+              />% is what?</label
+            >
+          </div>
+          <button class="btn" id="increase-calculate">Calculate</button>
+          <div class="result-container" id="increase-result">
+            <div class="result-value" id="increase-result-value">230</div>
+            <div class="result-formula" id="increase-result-formula">
+              200 + (15% × 200) = 230
+            </div>
+          </div>
+        </div>
+
+        <!-- Decrease Calculator -->
+        <div class="calculator-content" id="decrease-content">
+          <div class="form-group">
+            <label for="decrease-value"
+              ><input
+                type="number"
+                id="decrease-x"
+                class="form-control"
+                style="width: 80px; display: inline-block"
+                placeholder="200"
+                min="0"
+                step="0.01"
+              />
+              decreased by
+              <input
+                type="number"
+                id="decrease-y"
+                class="form-control"
+                style="width: 80px; display: inline-block"
+                placeholder="15"
+                min="0"
+                step="0.01"
+              />% is what?</label
+            >
+          </div>
+          <button class="btn" id="decrease-calculate">Calculate</button>
+          <div class="result-container" id="decrease-result">
+            <div class="result-value" id="decrease-result-value">170</div>
+            <div class="result-formula" id="decrease-result-formula">
+              200 - (15% × 200) = 170
+            </div>
+          </div>
+        </div>
+
+        <!-- Difference Calculator -->
+        <div class="calculator-content" id="difference-content">
+          <div class="form-group">
+            <label for="difference-value"
+              >What is the percentage increase/decrease from
+              <input
+                type="number"
+                id="difference-x"
+                class="form-control"
+                style="width: 80px; display: inline-block"
+                placeholder="100"
+                min="0"
+                step="0.01"
+              />
+              to
+              <input
+                type="number"
+                id="difference-y"
+                class="form-control"
+                style="width: 80px; display: inline-block"
+                placeholder="150"
+                min="0"
+                step="0.01"
+              />?</label
+            >
+          </div>
+          <button class="btn" id="difference-calculate">Calculate</button>
+          <div class="result-container" id="difference-result">
+            <div class="result-value" id="difference-result-value">50%</div>
+            <div class="result-formula" id="difference-result-formula">
+              (150 - 100) ÷ 100 × 100 = 50%
+            </div>
+          </div>
+        </div>
+
+        <!-- Examples Section -->
+        <div class="examples-section">
+          <div class="section-title">
+            <h3>Common Percentage Examples</h3>
+          </div>
+          <div class="examples-grid">
+            <div class="example-card">
+              <h3>Discounts</h3>
+              <p>
+                "What's the final price after a 20% discount on a $50 item?"
+              </p>
+              <p class="result-formula">50 - (20% × 50) = $40</p>
+            </div>
+            <div class="example-card">
+              <h3>Tips</h3>
+              <p>"How much is a 15% tip on a $75 restaurant bill?"</p>
+              <p class="result-formula">15% × 75 = $11.25</p>
+            </div>
+            <div class="example-card">
+              <h3>Taxes</h3>
+              <p>"What's the total with 8% sales tax on a $120 purchase?"</p>
+              <p class="result-formula">120 + (8% × 120) = $129.60</p>
+            </div>
+            <div class="example-card">
+              <h3>Growth</h3>
+              <p>
+                "A $1,000 investment grew to $1,200. What's the percentage
+                increase?"
+              </p>
+              <p class="result-formula">(1200 - 1000) ÷ 1000 × 100 = 20%</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

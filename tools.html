@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Free Online Tools - PDF Converter, Image Editor, Video Downloader |
+      Ecotrustia
+    </title>
+    <meta
+      name="description"
+      content="100% free online tools for PDF conversion, image editing, video downloading, and file compression. No installation required. Works on all devices."
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-dark: #2c3e50;
+        --primary-blue: #3498db;
+        --white: #ffffff;
+        --light-bg: #f5f7fa;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        line-height: 1.6;
+        background-color: var(--light-bg);
+        color: #333;
+        overflow-x: hidden;
+      }
+
+      /* Search Box */
+      .search-container {
+        width: 100%;
+        max-width: 500px;
+        margin: 1rem 0;
+        position: relative;
+      }
+
+      .search-box {
+        width: 100%;
+        padding: 0.8rem 1rem;
+        padding-right: 40px;
+        border-radius: 50px;
+        border: none;
+        font-family: "Poppins", sans-serif;
+        font-size: 1rem;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .search-box:focus {
+        outline: none;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .search-icon {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #7f8c8d;
+        cursor: pointer;
+      }
+
+      /* Search Results Dropdown */
+      .search-results {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        max-height: 400px;
+        overflow-y: auto;
+        z-index: 1000;
+      }
+
+      .search-results.active {
+        display: block;
+      }
+
+      .search-result-item {
+        padding: 0.8rem 1rem;
+        border-bottom: 1px solid #eee;
+        cursor: pointer;
+        transition: background-color 0.2s;
+      }
+
+      .search-result-item:hover {
+        background-color: #f5f7fa;
+      }
+
+      .search-result-item h4 {
+        font-size: 1rem;
+        margin-bottom: 0.3rem;
+        color: var(--primary-dark);
+      }
+
+      .search-result-item p {
+        font-size: 0.8rem;
+        color: #7f8c8d;
+      }
+
+      .no-results {
+        padding: 1rem;
+        text-align: center;
+        color: #7f8c8d;
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(
+          135deg,
+          var(--primary-blue) 0%,
+          var(--primary-dark) 100%
+        );
+        color: var(--white);
+        padding: 3rem 1rem;
+        text-align: center;
+        margin-top: 0;
+      }
+
+      .hero h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      .hero p {
+        font-size: 1.1rem;
+        max-width: 800px;
+        margin: 0 auto 1.5rem;
+        opacity: 0.9;
+      }
+
+      .more-tools-btn {
+        display: inline-block;
+        padding: 0.8rem 1.8rem;
+        background-color: transparent;
+        color: var(--white);
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+        border: 2px solid var(--white);
+        margin-top: 1rem;
+      }
+
+      .more-tools-btn:hover {
+        background-color: var(--white);
+        color: var(--primary-dark);
+        transform: translateY(-3px);
+      }
+
+      /* Tools Section */
+      .tools {
+        padding: 3rem 1rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .tools h2 {
+        text-align: center;
+        margin-bottom: 2rem;
+        font-size: 1.8rem;
+        color: var(--primary-dark);
+        position: relative;
+        padding-bottom: 1rem;
+      }
+
+      .tools h2::after {
+        content: "";
+        position: absolute;
+        width: 80px;
+        height: 3px;
+        background-color: var(--primary-blue);
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .tool-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .tool {
+        background-color: var(--white);
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .tool:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      .tool.highlight {
+        animation: highlight 1.5s ease;
+        box-shadow: 0 0 0 3px var(--primary-blue);
+      }
+
+      @keyframes highlight {
+        0% {
+          box-shadow: 0 0 0 0 rgba(52, 152, 219, 0.7);
+        }
+        70% {
+          box-shadow: 0 0 0 10px rgba(52, 152, 219, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(52, 152, 219, 0);
+        }
+      }
+
+      .tool h3 {
+        font-size: 1.3rem;
+        margin-bottom: 0.8rem;
+        color: var(--primary-dark);
+        display: flex;
+        align-items: center;
+      }
+
+      .tool h3 i {
+        margin-right: 10px;
+        color: var(--primary-blue);
+      }
+
+      .tool p {
+        margin-bottom: 1.2rem;
+        color: #7f8c8d;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 0.6rem 1.2rem;
+        background-color: var(--primary-blue);
+        color: var(--white);
+        text-decoration: none;
+        border-radius: 4px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .btn:hover {
+        background-color: var(--primary-dark);
+        transform: translateY(-2px);
+      }
+
+      /* Ads Section */
+      .ads {
+        padding: 2rem 1rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .ads h2 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        font-size: 1.5rem;
+        color: var(--primary-dark);
+      }
+
+      .ad-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+      }
+
+      .ad-container a {
+        display: block;
+        margin: 0.5rem;
+      }
+
+      .ad-container img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .ad-container img:hover {
+        transform: translateY(-3px);
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .header-container {
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          flex-wrap: wrap;
+        }
+
+        .logo {
+          margin-bottom: 0;
+        }
+
+        .search-container {
+          order: 3;
+          width: 100%;
+          margin: 1rem 0 0;
+        }
+
+        nav ul {
+          position: absolute;
+          right: 0;
+          top: 120px;
+          background-color: var(--primary-dark);
+          width: 100%;
+          flex-direction: column;
+          align-items: center;
+          padding: 2rem 0;
+          clip-path: circle(0px at 90% -10%);
+          transition: all 0.5s ease-out;
+        }
+
+        nav ul.active {
+          clip-path: circle(1000px at 90% -10%);
+        }
+
+        nav ul li {
+          margin: 1rem 0;
+        }
+
+        .hamburger {
+          display: block;
+        }
+
+        .hamburger.active div:nth-child(1) {
+          transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .hamburger.active div:nth-child(2) {
+          opacity: 0;
+        }
+
+        .hamburger.active div:nth-child(3) {
+          transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        .hero {
+          margin-top: 0;
+        }
+
+        .hero h2 {
+          font-size: 1.8rem;
+        }
+
+        .hero p {
+          font-size: 1rem;
+        }
+
+        .tool-list {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    
+
+    <!-- Main Content -->
+    <main>
+      <section class="hero">
+        <h2>Premium Online Tools - 100% Free</h2>
+        <p>
+          Convert, edit, compress and download files without software
+          installation. Our tools work instantly in your browser on any device.
+        </p>
+        <a href="#all-tools" class="more-tools-btn">Explore All Tools</a>
+      </section>
+
+      <section class="tools" id="all-tools">
+        <h2>Most Popular Tools</h2>
+        <div class="tool-list">
+          <!-- PDF Tools -->
+          <!-- <div class="tool" data-search="pdf to word converter pdf docx">
+            <h3><i class="fas fa-file-pdf"></i> PDF to Word Converter</h3>
+            <p>
+              Convert PDF to editable DOCX files with perfect formatting
+              preserved.
+            </p>
+            <a href="#" class="btn">Use Now</a>
+          </div> -->
+
+          <div class="tool" data-search="pdf merger combine merge">
+            <h3><i class="fas fa-file-pdf"></i> PDF Merger</h3>
+            <p>Combine multiple PDFs into one document in seconds.</p>
+            <a href="pdf-merger/index.html" class="btn">Use Now</a>
+          </div>
+          <div class="tool" data-search="pdf compressor reduce shrink">
+            <h3><i class="fas fa-file-pdf"></i> PDF Compressor</h3>
+            <p>Reduce PDF file size without quality loss for email sharing.</p>
+            <a href="pdf-compressor/index.html" class="btn">Use Now</a>
+          </div>
+
+          <!-- Image Tools -->
+          <div class="tool" data-search="image converter jpg png webp gif">
+            <h3><i class="fas fa-image"></i> Image Converter</h3>
+            <p>Convert between JPG, PNG, WEBP, GIF with one click.</p>
+            <a href="image-converter/index.html" class="btn">Use Now</a>
+          </div>
+          <div
+            class="tool"
+            data-search="image compressor reduce shrink optimize"
+          >
+            <h3><i class="fas fa-image"></i> Image Compressor</h3>
+            <p>Reduce image file size while maintaining visual quality.</p>
+            <a href="image-compressor/index.html" class="btn">Use Now</a>
+          </div>
+          <!-- <div class="tool" data-search="background remover photo editor">
+            <h3><i class="fas fa-image"></i> Background Remover</h3>
+            <p>Automatically remove backgrounds from photos instantly.</p>
+            <a href="#" class="btn">Use Now</a>
+          </div> -->
+
+          <!-- Video Tools -->
+          <!-- <div class="tool" data-search="youtube downloader video mp4">
+            <h3><i class="fab fa-youtube"></i> YouTube Downloader</h3>
+            <p>Download videos from YouTube in MP4, 4K, 1080p quality.</p>
+            <a href="#" class="btn">Use Now</a>
+          </div> -->
+          <!-- <div class="tool" data-search="instagram downloader photo video reel">
+            <h3><i class="fab fa-instagram"></i> Instagram Downloader</h3>
+            <p>Save photos, videos and reels from Instagram easily.</p>
+            <a href="instagram-downloader/index.html" class="btn">Use Now</a>
+          </div> -->
+          <!-- <div class="tool" data-search="facebook downloader video">
+            <h3><i class="fab fa-facebook"></i> Facebook Downloader</h3>
+            <p>Download videos from Facebook posts and stories.</p>
+            <a href="#" class="btn">Use Now</a>
+          </div> -->
+
+          <!-- Utilities -->
+          <div class="tool" data-search="url shortener link">
+            <h3><i class="fas fa-link"></i> URL Shortener</h3>
+            <p>Create short, memorable links for social media sharing.</p>
+            <a href="url-shortener/index.html" class="btn">Use Now</a>
+          </div>
+          <div class="tool" data-search="qr code generator">
+            <h3><i class="fas fa-qrcode"></i> QR Code Generator</h3>
+            <p>Create customizable QR codes for websites and contacts.</p>
+            <a href="qr-code-generator/index.html" class="btn">Use Now</a>
+          </div>
+          <div class="tool" data-search="password generator secure">
+            <h3><i class="fas fa-lock"></i> Password Generator</h3>
+            <p>Create strong, secure passwords for your accounts.</p>
+            <a href="password-generator/index.html" class="btn">Use Now</a>
+          </div>
+
+          <!-- Document Converters -->
+          <!-- <div class="tool" data-search="word to pdf doc docx">
+            <h3><i class="fas fa-file-word"></i> Word to PDF</h3>
+            <p>Convert DOC/DOCX files to PDF format instantly.</p>
+            <a href="#" class="btn">Use Now</a>
+          </div> -->
+          <!-- <div class="tool" data-search="excel to pdf xls xlsx">
+            <h3><i class="fas fa-file-excel"></i> Excel to PDF</h3>
+            <p>Convert XLS/XLSX spreadsheets to PDF documents.</p>
+            <a href="#" class="btn">Use Now</a>
+          </div> -->
+          <!-- <div class="tool" data-search="ppt to pdf powerpoint">
+            <h3><i class="fas fa-file-powerpoint"></i> PPT to PDF</h3>
+            <p>Convert PowerPoint presentations to PDF files.</p>
+            <a href="#" class="btn">Use Now</a>
+          </div> -->
+
+          <!-- Media Tools -->
+          <div class="tool" data-search="audio converter mp3 wav aac">
+            <h3><i class="fas fa-music"></i> Audio Converter</h3>
+            <p>Convert between MP3, WAV, AAC and other audio formats.</p>
+            <a href="audio-converter/index.html" class="btn">Use Now</a>
+          </div>
+          <div class="tool" data-search="video converter mp4 avi mov">
+            <h3><i class="fas fa-video"></i> Video Converter</h3>
+            <p>
+              Convert video files between different formats and resolutions.
+            </p>
+            <a href="video-convertor/index.html" class="btn">Use Now</a>
+          </div>
+          <div class="tool" data-search="file compressor zip rar">
+            <h3><i class="fas fa-file-archive"></i> File Compressor</h3>
+            <p>Compress ZIP, RAR files to reduce size for sharing.</p>
+            <a href="file-compressor/index.html" class="btn">Use Now</a>
+          </div>
+
+          <!-- Live Code Tester -->
+          <div class="tool" data-search="live code tester html css javascript">
+            <h3><i class="fas fa-code"></i> Live Code Tester</h3>
+            <p>Test and run HTML, CSS, and JavaScript code in real-time.</p>
+            <a href="livetester/index.html" class="btn" id="openCodeTester"
+              >Use Now</a
+            >
+          </div>
+
+          <!-- Text Tools -->
+          <div class="tool" data-search="word counter">
+            <h3><i class="fas fa-font"></i> Word Counter</h3>
+            <p>
+              Count words, characters, sentences and paragraphs in your text.
+            </p>
+            <a href="word-counter/index.html" class="btn">Use Now</a>
+          </div>
+          <div
+            class="tool"
+            data-search="case converter uppercase lowercase title case"
+          >
+            <h3><i class="fas fa-exchange-alt"></i> Case Converter</h3>
+            <p>Convert text between uppercase, lowercase and title case.</p>
+            <a href="case-converter/index.html" class="btn">Use Now</a>
+          </div>
+          <div class="tool" data-search="remove extra spaces">
+            <h3><i class="fas fa-space-shuttle"></i> Remove Extra Spaces</h3>
+            <p>Clean up text by removing unnecessary extra spaces.</p>
+            <a href="remove-spaces/index.html" class="btn">Use Now</a>
+          </div>
+          <div class="tool" data-search="text to slug generator url seo">
+            <h3><i class="fas fa-slug"></i> Text to Slug Generator</h3>
+            <p>Convert text to URL-friendly slugs for SEO optimization.</p>
+            <a href="slug-generator/index.html" class="btn">Use Now</a>
+          </div>
+
+          <!-- Image Tools -->
+          <div class="tool" data-search="client side image compressor">
+            <h3>
+              <i class="fas fa-compress-alt"></i> Client-side Image Compressor
+            </h3>
+            <p>Compress images in browser without uploading to server.</p>
+            <a href="client-image-compressor/index.html" class="btn">Use Now</a>
+          </div>
+          <div class="tool" data-search="image resizer">
+            <h3><i class="fas fa-expand-alt"></i> Image Resizer</h3>
+            <p>Resize images to exact dimensions while maintaining quality.</p>
+            <a href="image-resizer/index.html" class="btn">Use Now</a>
+          </div>
+          <div class="tool" data-search="image to base64">
+            <h3><i class="fas fa-code"></i> Image to Base64</h3>
+            <p>Convert images to Base64 encoded strings for web use.</p>
+            <a href="image-to-base64/index.html" class="btn">Use Now</a>
+          </div>
+
+          <!-- Color Tools -->
+          <div class="tool" data-search="color picker">
+            <h3><i class="fas fa-eye-dropper"></i> Color Picker</h3>
+            <p>Pick colors from screen and get HEX, RGB, HSL values.</p>
+            <a href="color-picker/index.html" class="btn">Use Now</a>
+          </div>
+          <div class="tool" data-search="hex to rgb converter">
+            <h3><i class="fas fa-palette"></i> HEX to RGB Converter</h3>
+            <p>Convert HEX color codes to RGB and vice versa.</p>
+            <a href="hex-to-rgb/index.html" class="btn">Use Now</a>
+          </div>
+          <div class="tool" data-search="gradient generator">
+            <h3><i class="fas fa-gradient"></i> Gradient Generator</h3>
+            <p>Create beautiful CSS gradients with custom colors.</p>
+            <a href="gradient-generator/index.html" class="btn">Use Now</a>
+          </div>
+
+          <!-- Date & Time Tools -->
+          <div class="tool" data-search="age calculator">
+            <h3><i class="fas fa-birthday-cake"></i> Age Calculator</h3>
+            <p>Calculate exact age in years, months and days.</p>
+            <a href="age-calculator/index.html" class="btn">Use Now</a>
+          </div>
+          <div class="tool" data-search="days between dates calculator">
+            <h3><i class="fas fa-calendar-alt"></i> Days Between Dates</h3>
+            <p>Calculate number of days between two dates.</p>
+            <a href="days-between-dates/index.html" class="btn">Use Now</a>
+          </div>
+          <div class="tool" data-search="countdown timer">
+            <h3><i class="fas fa-clock"></i> Countdown Timer</h3>
+            <p>Create custom countdown timers for events.</p>
+            <a href="countdown-timer/index.html" class="btn">Use Now</a>
+          </div>
+
+          <!-- Math Tools -->
+          <div class="tool" data-search="basic calculator">
+            <h3><i class="fas fa-calculator"></i> Basic Calculator</h3>
+            <p>Simple calculator for basic arithmetic operations.</p>
+            <a href="calculator/index.html" class="btn">Use Now</a>
+          </div>
+          <div class="tool" data-search="percentage calculator">
+            <h3><i class="fas fa-percentage"></i> Percentage Calculator</h3>
+            <p>Calculate percentages, increases and decreases.</p>
+            <a href="percentage-calculator/index.html" class="btn">Use Now</a>
+          </div>
+          <div class="tool" data-search="bmi calculator body mass index">
+            <h3><i class="fas fa-weight"></i> BMI Calculator</h3>
+            <p>Calculate Body Mass Index based on height and weight.</p>
+            <a href="bmi-calculator/index.html" class="btn">Use Now</a>
+          </div>
+
+          <!-- Unit Converter Tools -->
+          <div class="tool" data-search="length converter meter feet inch">
+            <h3><i class="fas fa-ruler"></i> Length Converter</h3>
+            <p>Convert between meters, feet, inches and other units.</p>
+            <a href="length-converter/index.html" class="btn">Use Now</a>
+          </div>
+          <div class="tool" data-search="weight converter kg pound ounce">
+            <h3><i class="fas fa-weight-hanging"></i> Weight Converter</h3>
+            <p>Convert between kilograms, pounds, ounces and other units.</p>
+            <a href="weight-converter/index.html" class="btn">Use Now</a>
+          </div>
+
+          <div
+            class="tool"
+            data-search="calories calculator daily intake bmr tdee"
+          >
+            <h3><i class="fas fa-fire"></i> Calories Calculator</h3>
+            <p>
+              Calculate your daily calorie needs based on activity level and
+              goals.
+            </p>
+            <a href="calories-calculator/index.html" class="btn">Use Now</a>
+          </div>
+
+          <div
+            class="tool"
+            data-search="temperature converter celsius fahrenheit kelvin"
+          >
+            <h3>
+              <i class="fas fa-temperature-low"></i> Temperature Converter
+            </h3>
+            <p>Convert between Celsius, Fahrenheit and Kelvin.</p>
+            <a href="temperature-converter/index.html" class="btn">Use Now</a>
+          </div>
+
+          <!-- Other Tools -->
+          <div
+            class="tool"
+            data-search="lorem ipsum generator placeholder text"
+          >
+            <h3><i class="fas fa-paragraph"></i> Lorem Ipsum Generator</h3>
+            <p>Generate placeholder text in Lorem Ipsum format.</p>
+            <a href="lorem-ipsum-generator/index.html" class="btn">Use Now</a>
+          </div>
+
+          <div
+            class="tool"
+            data-search="miles to kilometers converter distance unit"
+          >
+            <h3><i class="fas fa-road"></i> Miles to Kilometers Converter</h3>
+            <p>
+              Convert between miles and kilometers for distance measurements.
+            </p>
+            <a href="convert-miles-to-kilometer/index.html" class="btn"
+              >Use Now</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- <section class="ads">
+        <h2>Recommended Tools</h2>
+        <div class="ad-container">
+          <a href="#"
+            ><img
+              src="https://via.placeholder.com/300x150/3498db/ffffff?text=Premium+Tools"
+              alt="Premium Tools Package"
+          /></a>
+          <a href="#"
+            ><img
+              src="https://via.placeholder.com/300x150/2c3e50/ffffff?text=Pro+Features"
+              alt="Pro Version Features"
+          /></a>
+        </div>
+      </section> -->
+    </main>
+
+    
+
+    <script>
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute("href");
+          if (targetId === "#") return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+
+      // Animation for tool cards
+      const toolCards = document.querySelectorAll(".tool");
+      toolCards.forEach((card) => {
+        card.style.opacity = "0";
+        card.style.transform = "translateY(20px)";
+        card.style.transition = "all 0.5s ease";
+      });
+
+      function animateCards() {
+        toolCards.forEach((card) => {
+          const cardPosition = card.getBoundingClientRect().top;
+          const screenPosition = window.innerHeight / 1.3;
+
+          if (cardPosition < screenPosition) {
+            card.style.opacity = "1";
+            card.style.transform = "translateY(0)";
+          }
+        });
+      }
+
+      window.addEventListener("scroll", animateCards);
+      window.addEventListener("load", animateCards);
+
+      // Search Functionality
+      const searchInput = document.getElementById("searchInput");
+      const searchResults = document.getElementById("searchResults");
+      const searchIcon = document.getElementById("searchIcon");
+      const allTools = document.querySelectorAll(".tool");
+
+      // Add data-search attributes to all tool cards
+      allTools.forEach((tool) => {
+        const title = tool.querySelector("h3").textContent;
+        const desc = tool.querySelector("p").textContent;
+        tool.setAttribute(
+          "data-search",
+          `${title.toLowerCase()} ${desc.toLowerCase()}`
+        );
+      });
+
+      searchInput.addEventListener("input", function () {
+        const searchTerm = this.value.toLowerCase().trim();
+
+        if (searchTerm.length === 0) {
+          searchResults.classList.remove("active");
+          return;
+        }
+
+        // Clear previous results
+        searchResults.innerHTML = "";
+
+        // Filter tools
+        const matchingTools = Array.from(allTools).filter((tool) => {
+          const searchData = tool.getAttribute("data-search").toLowerCase();
+          return searchData.includes(searchTerm);
+        });
+
+        if (matchingTools.length > 0) {
+          matchingTools.slice(0, 5).forEach((tool) => {
+            const title = tool.querySelector("h3").textContent;
+            const desc = tool.querySelector("p").textContent;
+            const link = tool.querySelector("a").getAttribute("href");
+
+            const resultItem = document.createElement("div");
+            resultItem.className = "search-result-item";
+            resultItem.innerHTML = `
+              <h4>${title}</h4>
+              <p>${desc}</p>
+            `;
+
+            resultItem.addEventListener("click", function () {
+              // Highlight the tool
+              tool.classList.add("highlight");
+              setTimeout(() => {
+                tool.classList.remove("highlight");
+              }, 1500);
+
+              // Scroll to the tool
+              tool.scrollIntoView({ behavior: "smooth", block: "center" });
+
+              // Close search results
+              searchResults.classList.remove("active");
+              searchInput.value = "";
+            });
+
+            searchResults.appendChild(resultItem);
+          });
+
+          searchResults.classList.add("active");
+        } else {
+          const noResults = document.createElement("div");
+          noResults.className = "no-results";
+          noResults.textContent = "No tools found matching your search";
+          searchResults.appendChild(noResults);
+          searchResults.classList.add("active");
+        }
+      });
+
+      // Close search results when clicking outside
+      document.addEventListener("click", function (e) {
+        if (
+          !searchInput.contains(e.target) &&
+          !searchResults.contains(e.target)
+        ) {
+          searchResults.classList.remove("active");
+        }
+      });
+
+      // Search icon click
+      searchIcon.addEventListener("click", function () {
+        if (searchInput.value.trim().length > 0) {
+          const searchTerm = searchInput.value.toLowerCase().trim();
+          const matchingTool = Array.from(allTools).find((tool) => {
+            const searchData = tool.getAttribute("data-search").toLowerCase();
+            return searchData.includes(searchTerm);
+          });
+
+          if (matchingTool) {
+            matchingTool.scrollIntoView({
+              behavior: "smooth",
+              block: "center",
+            });
+            matchingTool.classList.add("highlight");
+            setTimeout(() => {
+              matchingTool.classList.remove("highlight");
+            }, 1500);
+          }
+        }
+      });
+
+      // Handle Enter key press
+      searchInput.addEventListener("keypress", function (e) {
+        if (e.key === "Enter") {
+          searchIcon.click();
+        }
+      });
+    </script>
+  </body>
+</html>

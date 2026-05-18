@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ecotrustia Solutions - BMI Calculator</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>BMI Calculator</h1>
+        <p>
+          Calculate your Body Mass Index to understand your weight status and
+          potential health risks. BMI is a simple screening tool for weight
+          categories.
+        </p>
+      </div>
+    </section>
+
+    <!-- BMI Calculator Section -->
+    <section class="section">
+      <div class="section-title">
+        <h2>Calculate Your BMI</h2>
+      </div>
+      <div class="bmi-container">
+        <div class="unit-toggle">
+          <button class="toggle-btn active" id="metric-btn">Metric</button>
+          <button class="toggle-btn" id="imperial-btn">Imperial</button>
+        </div>
+
+        <!-- Metric Inputs -->
+        <div id="metric-inputs">
+          <div class="input-group">
+            <div class="form-group">
+              <label for="height-cm">Height (cm)</label>
+              <input
+                type="number"
+                id="height-cm"
+                class="form-control"
+                placeholder="170"
+              />
+            </div>
+            <div class="form-group">
+              <label for="weight-kg">Weight (kg)</label>
+              <input
+                type="number"
+                id="weight-kg"
+                class="form-control"
+                placeholder="70"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Imperial Inputs (hidden by default) -->
+        <div id="imperial-inputs" style="display: none">
+          <div class="input-group">
+            <div class="form-group">
+              <label for="height-ft">Height (ft)</label>
+              <input
+                type="number"
+                id="height-ft"
+                class="form-control"
+                placeholder="5"
+              />
+            </div>
+            <div class="form-group">
+              <label for="height-in">Height (in)</label>
+              <input
+                type="number"
+                id="height-in"
+                class="form-control"
+                placeholder="7"
+              />
+            </div>
+            <div class="form-group">
+              <label for="weight-lb">Weight (lb)</label>
+              <input
+                type="number"
+                id="weight-lb"
+                class="form-control"
+                placeholder="154"
+              />
+            </div>
+          </div>
+        </div>
+
+        <button id="calculate-btn" class="btn">Calculate BMI</button>
+
+        <!-- Results Section -->
+        <div class="result-container" id="results" style="display: none">
+          <div class="bmi-value" id="bmi-value">24.2</div>
+          <div class="bmi-category" id="bmi-category">Normal weight</div>
+          <div class="bmi-message" id="bmi-message">
+            Your BMI suggests you have a healthy weight for your height.
+            Maintaining a healthy weight reduces your risk of developing serious
+            health problems.
+          </div>
+
+          <!-- BMI Scale -->
+          <div class="bmi-scale-container" style="margin-top: 2rem">
+            <div class="bmi-scale">
+              <div class="bmi-indicator" id="bmi-indicator"></div>
+              <div class="scale-markers">
+                <div class="scale-marker" style="left: 0%" data-value="0"></div>
+                <div
+                  class="scale-marker"
+                  style="left: 16.66%"
+                  data-value="18.5"
+                ></div>
+                <div
+                  class="scale-marker"
+                  style="left: 33.33%"
+                  data-value="25"
+                ></div>
+                <div
+                  class="scale-marker"
+                  style="left: 50%"
+                  data-value="30"
+                ></div>
+                <div
+                  class="scale-marker"
+                  style="left: 66.66%"
+                  data-value="35"
+                ></div>
+                <div
+                  class="scale-marker"
+                  style="left: 83.33%"
+                  data-value="40"
+                ></div>
+              </div>
+            </div>
+            <div class="categories-grid">
+              <div class="category-card underweight">
+                <h3>Underweight</h3>
+                <p>BMI &lt; 18.5</p>
+              </div>
+              <div class="category-card healthy">
+                <h3>Healthy</h3>
+                <p>18.5 - 24.9</p>
+              </div>
+              <div class="category-card overweight">
+                <h3>Overweight</h3>
+                <p>25 - 29.9</p>
+              </div>
+              <div class="category-card obese">
+                <h3>Obese</h3>
+                <p>BMI ≥ 30</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Health Tips -->
+        <div class="health-tips">
+          <div class="section-title">
+            <h3>Health & Wellness Tips</h3>
+          </div>
+          <div class="tips-grid">
+            <div class="tip-card">
+              <h3><i class="fas fa-utensils"></i> Balanced Diet</h3>
+              <p>
+                Eat a variety of foods including fruits, vegetables, lean
+                proteins, and whole grains to maintain a healthy weight.
+              </p>
+            </div>
+            <div class="tip-card">
+              <h3><i class="fas fa-running"></i> Regular Exercise</h3>
+              <p>
+                Aim for at least 150 minutes of moderate aerobic activity or 75
+                minutes of vigorous activity each week.
+              </p>
+            </div>
+            <div class="tip-card">
+              <h3><i class="fas fa-glass-whiskey"></i> Hydration</h3>
+              <p>
+                Drink plenty of water throughout the day. Limit sugary drinks
+                and excessive caffeine.
+              </p>
+            </div>
+            <div class="tip-card">
+              <h3><i class="fas fa-bed"></i> Quality Sleep</h3>
+              <p>
+                Adults should aim for 7-9 hours of quality sleep each night to
+                support overall health.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

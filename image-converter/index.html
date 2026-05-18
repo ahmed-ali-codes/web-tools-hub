@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ecotrustia Solutions - Image Converter</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    
+
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Image Converter</h1>
+        <p>
+          Convert between JPG, PNG, WEBP, and GIF formats with one click.
+          Perfect for optimizing images for web, social media, or any purpose.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <h2>Convert Image Formats</h2>
+      </div>
+      <div class="image-converter">
+        <div class="upload-area" id="upload-area">
+          <i class="fas fa-cloud-upload-alt"></i>
+          <p>Drag & Drop your image here or click to browse</p>
+          <small>Supports JPG, PNG, WEBP, GIF (Max: 10MB)</small>
+          <input type="file" id="file-input" accept="image/*" />
+        </div>
+
+        <div
+          class="preview-container"
+          id="preview-container"
+          style="display: none"
+        >
+          <div class="image-preview">
+            <h3>Original Image</h3>
+            <img id="preview-image" src="#" alt="Image preview" />
+          </div>
+          <div class="conversion-options">
+            <h3>Conversion Options</h3>
+            <div class="option-group">
+              <label for="output-format">Output Format</label>
+              <select id="output-format">
+                <option value="jpg">JPEG (JPG)</option>
+                <option value="png">PNG</option>
+                <option value="webp">WEBP</option>
+                <option value="gif">GIF</option>
+              </select>
+            </div>
+            <div
+              class="option-group"
+              id="quality-control"
+              style="display: none"
+            >
+              <label for="quality">Quality</label>
+              <div class="quality-group">
+                <input type="range" id="quality" min="1" max="100" value="85" />
+                <span class="quality-value" id="quality-value">85%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="image-info">
+          <div class="info-item">
+            <span>File Name:</span>
+            <span id="file-name">-</span>
+          </div>
+          <div class="info-item">
+            <span>File Size:</span>
+            <span id="file-size">-</span>
+          </div>
+          <div class="info-item">
+            <span>Dimensions:</span>
+            <span id="dimensions">-</span>
+          </div>
+          <div class="info-item">
+            <span>Current Format:</span>
+            <span id="current-format">-</span>
+          </div>
+        </div>
+
+        <div class="action-buttons">
+          <button id="convert-btn" class="btn btn-convert" disabled>
+            <i class="fas fa-exchange-alt"></i> Convert Image
+          </button>
+          <button id="reset-btn" class="btn btn-reset">
+            <i class="fas fa-redo"></i> Reset
+          </button>
+          <button
+            id="download-btn"
+            class="btn btn-download"
+            style="display: none"
+          >
+            <i class="fas fa-download"></i> Download Converted Image
+          </button>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

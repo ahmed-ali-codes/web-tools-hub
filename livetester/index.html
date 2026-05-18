@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code Live Tester - Ecotrustia Solutions</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Code Live Tester</h1>
+        <p>
+          Test your HTML, CSS, and JavaScript code in real-time with our
+          interactive code editor. See instant results as you type!
+        </p>
+        <div class="hero-buttons">
+          <a href="#tester" class="btn">Start Testing</a>
+          <a href="../index.html" class="btn btn-outline">Back to Home</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Live Tester Section -->
+    <section class="section" id="tester">
+      <div class="section-title">
+        <h2>Interactive Code Tester</h2>
+      </div>
+
+      <div class="tester-container">
+        <div class="tabs">
+          <div class="tab active" data-target="html">
+            <i class="fab fa-html5"></i> HTML
+          </div>
+          <div class="tab" data-target="css">
+            <i class="fab fa-css3-alt"></i> CSS
+          </div>
+          <div class="tab" data-target="js">
+            <i class="fab fa-js"></i> JavaScript
+          </div>
+        </div>
+
+        <div class="editor-container">
+          <div class="editor active" id="html-editor">
+            <textarea id="html" placeholder="Write your HTML code here...">
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Page</title>
+</head>
+<body>
+  <h1>Hello World!</h1>
+  <p>Edit this code to see live changes</p>
+</body>
+</html></textarea
+            >
+          </div>
+          <div class="editor" id="css-editor">
+            <textarea id="css" placeholder="Write your CSS code here...">
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 50px;
+  color: #3498db;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}</textarea
+            >
+          </div>
+          <div class="editor" id="js-editor">
+            <textarea id="js" placeholder="Write your JavaScript code here...">
+document.querySelector('h1').addEventListener('click', function() {
+  this.style.color = '#' + Math.floor(Math.random()*16777215).toString(16);
+});</textarea
+            >
+          </div>
+        </div>
+      </div>
+
+      <h3 style="margin-bottom: 1rem">Live Preview:</h3>
+      <iframe id="preview"></iframe>
+
+      <div class="tester-actions">
+        <button class="btn btn-outline" id="reset-btn">
+          <i class="fas fa-redo"></i> Reset Code
+        </button>
+      </div>
+    </section>
+
+    
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

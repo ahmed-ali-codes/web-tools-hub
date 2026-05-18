@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Merge PDFs Online - Combine Files Fast & Free | Ecotrustia</title>
+    <meta
+      name="description"
+      content="Combine multiple PDFs into one document instantly - our free online tool preserves formatting with no watermarks. No registration required!"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>PDF Merger</h1>
+        <p>
+          Combine multiple PDF files into a single document quickly and easily.
+          Perfect for organizing reports, presentations, or any PDF documents.
+        </p>
+      </div>
+    </section>
+
+    <!-- PDF Merger Section -->
+    <section class="section">
+      <div class="section-title">
+        <h2>Merge PDF Files</h2>
+      </div>
+      <div class="pdf-merger">
+        <div class="upload-area" id="upload-area">
+          <i class="fas fa-file-pdf"></i>
+          <p>Drag & Drop your PDF files here or click to browse</p>
+          <small>Supports multiple PDF files (Max: 20MB each)</small>
+          <input type="file" id="file-input" accept=".pdf" multiple />
+        </div>
+
+        <div class="file-list" id="file-list"></div>
+
+        <div class="merge-options">
+          <div class="option-group">
+            <label for="output-name">Output Filename</label>
+            <input
+              type="text"
+              id="output-name"
+              placeholder="merged-document.pdf"
+            />
+          </div>
+          <div class="option-group">
+            <label for="page-order">Page Order</label>
+            <select id="page-order">
+              <option value="normal">Normal (First to Last)</option>
+              <option value="reverse">Reverse (Last to First)</option>
+              <option value="custom">Custom Order (Drag to reorder)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="action-buttons">
+          <button id="merge-btn" class="btn btn-merge" disabled>
+            <i class="fas fa-object-group"></i> Merge PDFs
+          </button>
+          <button id="clear-btn" class="btn btn-clear">
+            <i class="fas fa-trash"></i> Clear All
+          </button>
+          <button id="download-btn" class="btn btn-download">
+            <i class="fas fa-download"></i> Download Merged PDF
+          </button>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <!-- PDF Libraries -->
+    <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+    <script src="https://unpkg.com/downloadjs@1.4.7"></script>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

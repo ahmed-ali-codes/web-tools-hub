@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ecotrustia Solutions - Length Converter</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Length Converter</h1>
+        <p>
+          Instantly convert between meters, feet, inches, centimeters, yards,
+          and kilometers. Perfect for construction, engineering, design, and
+          everyday measurements.
+        </p>
+      </div>
+    </section>
+
+    <!-- Length Converter Section -->
+    <section class="section">
+      <div class="section-title">
+        <h2>Convert Length Units</h2>
+      </div>
+      <div class="converter-container">
+        <div class="converter-grid">
+          <!-- Meters Converter -->
+          <div class="converter-card">
+            <h3><i class="fas fa-ruler"></i> Meters</h3>
+            <div class="form-group">
+              <label for="meters">Enter Meters (m)</label>
+              <input
+                type="number"
+                id="meters"
+                class="form-control"
+                placeholder="0"
+                step="0.01"
+              />
+            </div>
+            <div class="result-display">
+              <div class="result-item" id="m-to-ft">Feet: 0 ft</div>
+              <div class="result-item" id="m-to-in">Inches: 0 in</div>
+              <div class="result-item" id="m-to-cm">Centimeters: 0 cm</div>
+              <div class="result-item" id="m-to-yd">Yards: 0 yd</div>
+              <div class="result-item" id="m-to-km">Kilometers: 0 km</div>
+            </div>
+          </div>
+
+          <!-- Feet Converter -->
+          <div class="converter-card">
+            <h3><i class="fas fa-ruler-vertical"></i> Feet</h3>
+            <div class="form-group">
+              <label for="feet">Enter Feet (ft)</label>
+              <input
+                type="number"
+                id="feet"
+                class="form-control"
+                placeholder="0"
+                step="0.01"
+              />
+            </div>
+            <div class="result-display">
+              <div class="result-item" id="ft-to-m">Meters: 0 m</div>
+              <div class="result-item" id="ft-to-in">Inches: 0 in</div>
+              <div class="result-item" id="ft-to-cm">Centimeters: 0 cm</div>
+              <div class="result-item" id="ft-to-yd">Yards: 0 yd</div>
+              <div class="result-item" id="ft-to-km">Kilometers: 0 km</div>
+            </div>
+          </div>
+
+          <!-- Inches Converter -->
+          <div class="converter-card">
+            <h3><i class="fas fa-ruler-horizontal"></i> Inches</h3>
+            <div class="form-group">
+              <label for="inches">Enter Inches (in)</label>
+              <input
+                type="number"
+                id="inches"
+                class="form-control"
+                placeholder="0"
+                step="0.01"
+              />
+            </div>
+            <div class="result-display">
+              <div class="result-item" id="in-to-m">Meters: 0 m</div>
+              <div class="result-item" id="in-to-ft">Feet: 0 ft</div>
+              <div class="result-item" id="in-to-cm">Centimeters: 0 cm</div>
+              <div class="result-item" id="in-to-yd">Yards: 0 yd</div>
+              <div class="result-item" id="in-to-km">Kilometers: 0 km</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="converter-grid" style="margin-top: 2rem">
+          <!-- Centimeters Converter -->
+          <div class="converter-card">
+            <h3><i class="fas fa-ruler-combined"></i> Centimeters</h3>
+            <div class="form-group">
+              <label for="centimeters">Enter Centimeters (cm)</label>
+              <input
+                type="number"
+                id="centimeters"
+                class="form-control"
+                placeholder="0"
+                step="0.1"
+              />
+            </div>
+            <div class="result-display">
+              <div class="result-item" id="cm-to-m">Meters: 0 m</div>
+              <div class="result-item" id="cm-to-ft">Feet: 0 ft</div>
+              <div class="result-item" id="cm-to-in">Inches: 0 in</div>
+              <div class="result-item" id="cm-to-yd">Yards: 0 yd</div>
+              <div class="result-item" id="cm-to-km">Kilometers: 0 km</div>
+            </div>
+          </div>
+
+          <!-- Yards Converter -->
+          <div class="converter-card">
+            <h3><i class="fas fa-tape"></i> Yards</h3>
+            <div class="form-group">
+              <label for="yards">Enter Yards (yd)</label>
+              <input
+                type="number"
+                id="yards"
+                class="form-control"
+                placeholder="0"
+                step="0.01"
+              />
+            </div>
+            <div class="result-display">
+              <div class="result-item" id="yd-to-m">Meters: 0 m</div>
+              <div class="result-item" id="yd-to-ft">Feet: 0 ft</div>
+              <div class="result-item" id="yd-to-in">Inches: 0 in</div>
+              <div class="result-item" id="yd-to-cm">Centimeters: 0 cm</div>
+              <div class="result-item" id="yd-to-km">Kilometers: 0 km</div>
+            </div>
+          </div>
+
+          <!-- Kilometers Converter -->
+          <div class="converter-card">
+            <h3><i class="fas fa-road"></i> Kilometers</h3>
+            <div class="form-group">
+              <label for="kilometers">Enter Kilometers (km)</label>
+              <input
+                type="number"
+                id="kilometers"
+                class="form-control"
+                placeholder="0"
+                step="0.001"
+              />
+            </div>
+            <div class="result-display">
+              <div class="result-item" id="km-to-m">Meters: 0 m</div>
+              <div class="result-item" id="km-to-ft">Feet: 0 ft</div>
+              <div class="result-item" id="km-to-in">Inches: 0 in</div>
+              <div class="result-item" id="km-to-yd">Yards: 0 yd</div>
+              <div class="result-item" id="km-to-cm">Centimeters: 0 cm</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Common Lengths Section -->
+        <div class="common-lengths">
+          <div class="section-title">
+            <h3>Common Length Conversions</h3>
+          </div>
+          <div class="lengths-grid">
+            <div class="length-card">
+              <h3>1 Meter</h3>
+              <div class="length-value">3.2808 ft</div>
+              <div class="length-desc">Standard metric unit</div>
+            </div>
+            <div class="length-card">
+              <h3>1 Foot</h3>
+              <div class="length-value">12 in</div>
+              <div class="length-desc">Standard US/UK unit</div>
+            </div>
+            <div class="length-card">
+              <h3>1 Inch</h3>
+              <div class="length-value">2.54 cm</div>
+              <div class="length-desc">Common for small measurements</div>
+            </div>
+            <div class="length-card">
+              <h3>1 Mile</h3>
+              <div class="length-value">1.6093 km</div>
+              <div class="length-desc">Common for road distances</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

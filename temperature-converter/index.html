@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ecotrustia Solutions - Temperature Converter</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Temperature Converter</h1>
+        <p>
+          Easily convert between Celsius, Fahrenheit, and Kelvin. Perfect for
+          scientific calculations, cooking, weather analysis, and more.
+        </p>
+      </div>
+    </section>
+
+    <!-- Temperature Converter Section -->
+    <section class="section">
+      <div class="section-title">
+        <h2>Convert Temperature</h2>
+      </div>
+      <div class="converter-container">
+        <div class="converter-grid">
+          <!-- Celsius Converter -->
+          <div class="converter-card">
+            <h3><i class="fas fa-thermometer-half"></i> Celsius</h3>
+            <div class="form-group">
+              <label for="celsius">Enter Celsius (°C)</label>
+              <input
+                type="number"
+                id="celsius"
+                class="form-control"
+                placeholder="0"
+                step="0.1"
+              />
+            </div>
+            <div class="result-display">
+              <div id="celsius-to-fahrenheit">°F</div>
+              <div id="celsius-to-kelvin">K</div>
+            </div>
+          </div>
+
+          <!-- Fahrenheit Converter -->
+          <div class="converter-card">
+            <h3><i class="fas fa-thermometer-full"></i> Fahrenheit</h3>
+            <div class="form-group">
+              <label for="fahrenheit">Enter Fahrenheit (°F)</label>
+              <input
+                type="number"
+                id="fahrenheit"
+                class="form-control"
+                placeholder="32"
+                step="0.1"
+              />
+            </div>
+            <div class="result-display">
+              <div id="fahrenheit-to-celsius">°C</div>
+              <div id="fahrenheit-to-kelvin">K</div>
+            </div>
+          </div>
+
+          <!-- Kelvin Converter -->
+          <div class="converter-card">
+            <h3><i class="fas fa-thermometer-empty"></i> Kelvin</h3>
+            <div class="form-group">
+              <label for="kelvin">Enter Kelvin (K)</label>
+              <input
+                type="number"
+                id="kelvin"
+                class="form-control"
+                placeholder="273.15"
+                step="0.1"
+              />
+            </div>
+            <div class="result-display">
+              <div id="kelvin-to-celsius">°C</div>
+              <div id="kelvin-to-fahrenheit">°F</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Key Temperatures Section -->
+        <div class="key-temperatures">
+          <div class="section-title">
+            <h3>Key Temperature Points</h3>
+          </div>
+          <div class="temperatures-grid">
+            <div class="temperature-card">
+              <h3>Absolute Zero</h3>
+              <div class="temperature-value">-273.15°C</div>
+              <div class="temperature-desc">
+                Theoretical minimum temperature
+              </div>
+            </div>
+            <div class="temperature-card">
+              <h3>Water Freezes</h3>
+              <div class="temperature-value">0°C / 32°F</div>
+              <div class="temperature-desc">At standard pressure</div>
+            </div>
+            <div class="temperature-card">
+              <h3>Human Body</h3>
+              <div class="temperature-value">37°C / 98.6°F</div>
+              <div class="temperature-desc">Average normal temperature</div>
+            </div>
+            <div class="temperature-card">
+              <h3>Water Boils</h3>
+              <div class="temperature-value">100°C / 212°F</div>
+              <div class="temperature-desc">At standard pressure</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

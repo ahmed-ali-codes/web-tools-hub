@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ecotrustia Solutions - Lorem Ipsum Generator</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Lorem Ipsum Generator</h1>
+        <p>
+          Generate placeholder text in Lorem Ipsum format for your design
+          mockups, websites, and documents. Customize length and format to suit
+          your needs.
+        </p>
+      </div>
+    </section>
+
+    <!-- Lorem Ipsum Generator Section -->
+    <section class="section">
+      <div class="section-title">
+        <h2>Generate Lorem Ipsum Text</h2>
+      </div>
+      <div class="lorem-generator">
+        <div class="options-container">
+          <div class="form-group">
+            <label for="amount">Amount</label>
+            <input
+              type="number"
+              id="amount"
+              class="form-control"
+              min="1"
+              max="50"
+              value="5"
+            />
+          </div>
+          <div class="form-group">
+            <label for="type">Type</label>
+            <select id="type" class="form-control">
+              <option value="paragraphs">Paragraphs</option>
+              <option value="sentences">Sentences</option>
+              <option value="words">Words</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="start-with">Start With</label>
+            <select id="start-with" class="form-control">
+              <option value="lorem">Lorem ipsum dolor sit amet...</option>
+              <option value="random">Random start text</option>
+            </select>
+          </div>
+        </div>
+
+        <button id="generate-btn" class="btn">Generate Text</button>
+
+        <div class="lorem-output">
+          <textarea
+            id="output"
+            readonly
+            placeholder="Your generated Lorem Ipsum text will appear here..."
+          ></textarea>
+          <div class="actions">
+            <button id="copy-btn" class="btn">
+              <i class="fas fa-copy"></i> Copy Text
+            </button>
+            <button id="clear-btn" class="btn btn-outline">
+              <i class="fas fa-trash-alt"></i> Clear
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Features Section -->
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-file-alt"></i>
+          </div>
+          <h3>Design Mockups</h3>
+          <p>
+            Perfect for filling text areas in wireframes, prototypes, and design
+            comps without distracting with real content.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-code"></i>
+          </div>
+          <h3>Web Development</h3>
+          <p>
+            Use placeholder text during development before final content is
+            available.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-book"></i>
+          </div>
+          <h3>Print Layouts</h3>
+          <p>
+            Great for testing typography and layout in brochures, magazines, and
+            other print materials.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-pencil-alt"></i>
+          </div>
+          <h3>Content Drafting</h3>
+          <p>
+            Helps writers focus on layout and formatting before creating final
+            content.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

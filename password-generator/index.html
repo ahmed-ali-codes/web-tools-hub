@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ecotrustia Solutions - Password Generator</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Secure Password Generator</h1>
+        <p>
+          Create strong, random passwords to protect your online accounts. Our
+          tool generates highly secure passwords that are difficult to crack.
+        </p>
+      </div>
+    </section>
+
+    <!-- Password Generator Section -->
+    <section class="section">
+      <div class="section-title">
+        <h2>Generate a Strong Password</h2>
+      </div>
+      <div class="password-generator">
+        <div class="password-display">
+          <input
+            type="text"
+            id="password"
+            readonly
+            placeholder="Your secure password will appear here"
+          />
+          <button id="copy-btn">
+            <i class="fas fa-copy"></i>
+          </button>
+        </div>
+
+        <div class="options-container">
+          <div class="option-group">
+            <label for="length"
+              >Password Length: <span id="length-value">12</span></label
+            >
+            <input type="range" id="length" min="6" max="32" value="12" />
+          </div>
+
+          <div class="option-group">
+            <label>
+              <input type="checkbox" id="uppercase" checked />
+              Include Uppercase (A-Z)
+            </label>
+            <label>
+              <input type="checkbox" id="lowercase" checked />
+              Include Lowercase (a-z)
+            </label>
+            <label>
+              <input type="checkbox" id="numbers" checked />
+              Include Numbers (0-9)
+            </label>
+            <label>
+              <input type="checkbox" id="symbols" checked />
+              Include Symbols (!@#$%^&*)
+            </label>
+          </div>
+        </div>
+
+        <button id="generate-btn" class="btn generate-btn">
+          Generate Password
+        </button>
+
+        <div class="strength-meter">
+          <div class="strength-title">
+            <span>Password Strength:</span>
+            <span id="strength-text">Weak</span>
+          </div>
+          <div class="meter">
+            <div class="meter-bar" id="meter-bar"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Password Tips Section -->
+      <div class="tips-section">
+        <div class="section-title">
+          <h2>Password Security Tips</h2>
+        </div>
+        <div class="tips-grid">
+          <div class="tip-card">
+            <h3><i class="fas fa-lock"></i> Use Long Passwords</h3>
+            <p>
+              Longer passwords are more secure. Aim for at least 12-16
+              characters for important accounts.
+            </p>
+          </div>
+          <div class="tip-card">
+            <h3><i class="fas fa-sync-alt"></i> Change Regularly</h3>
+            <p>
+              Update your passwords every 3-6 months, especially for sensitive
+              accounts like email and banking.
+            </p>
+          </div>
+          <div class="tip-card">
+            <h3><i class="fas fa-unique"></i> Unique for Each Account</h3>
+            <p>
+              Never reuse passwords across different websites or services. Each
+              account should have its own password.
+            </p>
+          </div>
+          <div class="tip-card">
+            <h3><i class="fas fa-shield-alt"></i> Use a Password Manager</h3>
+            <p>
+              Consider using a password manager to securely store and organize
+              all your passwords.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

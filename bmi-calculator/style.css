@@ -1,0 +1,380 @@
+:root {
+        --primary-dark: #2c3e50;
+        --primary-blue: #3498db;
+        --white: #ffffff;
+        --healthy: #2ecc71;
+        --overweight: #f39c12;
+        --obese: #e74c3c;
+        --underweight: #3498db;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        color: var(--primary-dark);
+        background-color: var(--white);
+        overflow-x: hidden;
+      }
+
+      /* Hero Section */
+      .hero {
+        height: 60vh;
+        background: linear-gradient(
+            rgba(44, 62, 80, 0.8),
+            rgba(44, 62, 80, 0.8)
+          ),
+          url("https://images.unsplash.com/photo-1535914254981-b5012eebbd15?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        padding: 0 5%;
+        color: var(--white);
+        margin-top: 0;
+      }
+
+      .hero-content {
+        max-width: 600px;
+        animation: fadeIn 1s ease-out;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+      }
+
+      .hero p {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+      }
+
+      .btn {
+        display: inline-block;
+        background-color: var(--primary-blue);
+        color: var(--white);
+        padding: 0.8rem 2rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+      }
+
+      .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .btn-outline {
+        background-color: transparent;
+        border: 2px solid var(--white);
+        margin-left: 1rem;
+      }
+
+      .btn-outline:hover {
+        background-color: var(--white);
+        color: var(--primary-dark);
+      }
+
+      /* Sections */
+      .section {
+        padding: 5rem 5%;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .section-title h2 {
+        font-size: 2.5rem;
+        color: var(--primary-dark);
+        position: relative;
+        display: inline-block;
+        padding-bottom: 1rem;
+      }
+
+      .section-title h2::after {
+        content: "";
+        position: absolute;
+        width: 50%;
+        height: 3px;
+        background-color: var(--primary-blue);
+        bottom: 0;
+        left: 25%;
+      }
+
+      /* BMI Calculator Section */
+      .bmi-container {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: #f9f9f9;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .input-group {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 0.8rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-family: "Poppins", sans-serif;
+        font-size: 1.1rem;
+        transition: border 0.3s ease;
+      }
+
+      .form-control:focus {
+        outline: none;
+        border-color: var(--primary-blue);
+      }
+
+      .unit-toggle {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2rem;
+      }
+
+      .toggle-btn {
+        padding: 0.5rem 1.5rem;
+        background-color: #eee;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .toggle-btn:first-child {
+        border-radius: 5px 0 0 5px;
+      }
+
+      .toggle-btn:last-child {
+        border-radius: 0 5px 5px 0;
+      }
+
+      .toggle-btn.active {
+        background-color: var(--primary-blue);
+        color: white;
+      }
+
+      .result-container {
+        text-align: center;
+        margin-top: 2rem;
+        padding: 2rem;
+        border-radius: 10px;
+        background-color: rgba(52, 152, 219, 0.1);
+      }
+
+      .bmi-value {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+      }
+
+      .bmi-category {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+
+      .bmi-message {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      /* BMI Scale */
+      .bmi-scale {
+        margin-top: 3rem;
+        position: relative;
+        height: 30px;
+        background: linear-gradient(
+          to right,
+          var(--underweight),
+          var(--healthy),
+          var(--overweight),
+          var(--obese)
+        );
+        border-radius: 15px;
+        overflow: hidden;
+      }
+
+      .scale-markers {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 0.5rem;
+      }
+
+      .scale-marker {
+        position: relative;
+        width: 1px;
+        height: 10px;
+        background-color: var(--primary-dark);
+        top: -40px;
+      }
+
+      .scale-marker::after {
+        content: attr(data-value);
+        position: absolute;
+        top: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 0.8rem;
+      }
+
+      .bmi-indicator {
+        position: absolute;
+        top: -5px;
+        width: 10px;
+        height: 40px;
+        background-color: var(--primary-dark);
+        transform: translateX(-50%);
+        transition: left 0.5s ease;
+      }
+
+      /* BMI Categories */
+      .categories-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+        margin-top: 3rem;
+      }
+
+      .category-card {
+        padding: 1rem;
+        border-radius: 5px;
+        text-align: center;
+      }
+
+      .category-card h3 {
+        margin-bottom: 0.5rem;
+      }
+
+      .underweight {
+        background-color: rgba(52, 152, 219, 0.1);
+        border: 1px solid var(--underweight);
+      }
+
+      .healthy {
+        background-color: rgba(46, 204, 113, 0.1);
+        border: 1px solid var(--healthy);
+      }
+
+      .overweight {
+        background-color: rgba(243, 156, 18, 0.1);
+        border: 1px solid var(--overweight);
+      }
+
+      .obese {
+        background-color: rgba(231, 76, 60, 0.1);
+        border: 1px solid var(--obese);
+      }
+
+      /* Health Tips */
+      .health-tips {
+        margin-top: 3rem;
+      }
+
+      .tips-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .tip-card {
+        background-color: #f9f9f9;
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      }
+
+      .tip-card h3 {
+        color: var(--primary-blue);
+        margin-bottom: 0.5rem;
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 768px) {
+        .navbar {
+          padding: 1rem 5%;
+        }
+
+        .nav-links {
+          position: absolute;
+          right: 0;
+          top: 70px;
+          background-color: var(--primary-dark);
+          width: 100%;
+          flex-direction: column;
+          align-items: center;
+          padding: 2rem 0;
+          clip-path: circle(0px at 90% -10%);
+          transition: all 0.5s ease-out;
+        }
+
+        .nav-links.active {
+          clip-path: circle(1000px at 90% -10%);
+        }
+
+        .nav-links li {
+          margin: 1rem 0;
+        }
+
+        .hamburger {
+          display: block;
+        }
+
+        .hamburger.active div:nth-child(1) {
+          transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .hamburger.active div:nth-child(2) {
+          opacity: 0;
+        }
+
+        .hamburger.active div:nth-child(3) {
+          transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        .hero h1 {
+          font-size: 2rem;
+        }
+
+        .hero p {
+          font-size: 1rem;
+        }
+
+        .btn {
+          padding: 0.6rem 1.5rem;
+        }
+
+        .input-group {
+          grid-template-columns: 1fr;
+        }
+      }

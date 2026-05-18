@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ecotrustia Solutions - Image Compressor</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    
+
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Image Compressor</h1>
+        <p>
+          Reduce image file size while maintaining visual quality. Perfect for
+          optimizing images for web, email, and storage.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <h2>Compress Images</h2>
+      </div>
+      <div class="image-compressor">
+        <div class="upload-area" id="upload-area">
+          <i class="fas fa-cloud-upload-alt"></i>
+          <p>Drag & Drop your image here or click to browse</p>
+          <small>Supports JPG, PNG, WEBP (Max: 10MB)</small>
+          <input
+            type="file"
+            id="file-input"
+            accept="image/jpeg, image/png, image/webp"
+          />
+        </div>
+
+        <div
+          class="preview-container"
+          id="preview-container"
+          style="display: none"
+        >
+          <div class="image-preview">
+            <h3>Original Image</h3>
+            <img id="preview-image" src="#" alt="Image preview" />
+          </div>
+          <div class="compression-options">
+            <h3>Compression Options</h3>
+            <div class="option-group">
+              <label for="output-format">Output Format</label>
+              <select id="output-format">
+                <option value="auto">Auto (Same as input)</option>
+                <option value="jpg">JPEG (JPG)</option>
+                <option value="png">PNG</option>
+                <option value="webp">WEBP</option>
+              </select>
+            </div>
+            <div class="option-group">
+              <label for="quality">Compression Quality</label>
+              <div class="quality-group">
+                <input
+                  type="range"
+                  id="quality"
+                  min="10"
+                  max="100"
+                  value="80"
+                />
+                <span class="quality-value" id="quality-value">80%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="compression-info"
+          id="compression-info"
+          style="display: none"
+        >
+          <div class="info-item">
+            <span>Original Size:</span>
+            <span id="original-size">-</span>
+          </div>
+          <div class="info-item">
+            <span>Compressed Size:</span>
+            <span id="compressed-size">-</span>
+          </div>
+          <div class="info-item">
+            <span>Savings:</span>
+            <span id="savings" class="savings">-</span>
+          </div>
+        </div>
+
+        <div class="action-buttons">
+          <button id="compress-btn" class="btn btn-compress" disabled>
+            <i class="fas fa-compress-alt"></i> Compress Image
+          </button>
+          <button id="reset-btn" class="btn btn-reset">
+            <i class="fas fa-redo"></i> Reset
+          </button>
+          <button
+            id="download-btn"
+            class="btn btn-download"
+            style="display: none"
+          >
+            <i class="fas fa-download"></i> Download Compressed Image
+          </button>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

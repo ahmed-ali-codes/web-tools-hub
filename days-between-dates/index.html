@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ecotrustia Solutions - Days Between Dates Calculator</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Days Between Dates Calculator</h1>
+        <p>
+          Calculate the exact number of days between any two dates. Perfect for
+          planning events, tracking durations, or counting down to special
+          occasions.
+        </p>
+      </div>
+    </section>
+
+    <!-- Date Calculator Section -->
+    <section class="section">
+      <div class="section-title">
+        <h2>Calculate Days Between Dates</h2>
+      </div>
+      <div class="date-calculator">
+        <div class="date-inputs">
+          <div class="date-group">
+            <label for="start-date">Start Date</label>
+            <input type="date" id="start-date" class="date-control" value="" />
+          </div>
+          <div class="date-group">
+            <label for="end-date">End Date</label>
+            <input type="date" id="end-date" class="date-control" value="" />
+          </div>
+        </div>
+
+        <div class="result-display" id="result-display" style="display: none">
+          <div class="days-result" id="days-result">0</div>
+          <div class="result-label">Days Between Dates</div>
+        </div>
+
+        <button id="calculate-btn" class="btn calculate-btn">
+          Calculate Days
+        </button>
+      </div>
+
+      <!-- Features Section -->
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-calendar-alt"></i>
+          </div>
+          <h3>Any Dates</h3>
+          <p>
+            Calculate between any two dates, past or future, with accurate
+            results.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-history"></i>
+          </div>
+          <h3>Time Periods</h3>
+          <p>
+            Perfect for tracking project durations, vacations, or historical
+            events.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-birthday-cake"></i>
+          </div>
+          <h3>Special Occasions</h3>
+          <p>
+            Countdown to birthdays, anniversaries, or other important dates.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h3>Responsive Design</h3>
+          <p>Works perfectly on all devices from desktop to mobile.</p>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

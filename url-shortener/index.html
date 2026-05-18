@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ecotrustia Solutions - URL Shortener</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>URL Shortener Tool</h1>
+        <p>
+          Create short, memorable links perfect for social media sharing,
+          marketing campaigns, and anywhere you need a concise URL.
+        </p>
+      </div>
+    </section>
+
+    <!-- URL Shortener Section -->
+    <section class="section">
+      <div class="section-title">
+        <h2>Shorten Your URL</h2>
+      </div>
+      <div class="url-shortener">
+        <div class="input-group">
+          <label for="original-url">Enter your long URL</label>
+          <input
+            type="url"
+            id="original-url"
+            placeholder="https://www.example.com/very-long-url..."
+          />
+        </div>
+
+        <div class="input-group">
+          <label for="custom-alias">Custom alias (optional)</label>
+          <input type="text" id="custom-alias" placeholder="my-custom-link" />
+          <small>Leave blank for random generated alias</small>
+        </div>
+
+        <button id="shorten-btn" class="btn">
+          <i class="fas fa-link"></i> Shorten URL
+        </button>
+
+        <div class="result-container" id="result-container">
+          <div class="result-box">
+            <div class="original-url" id="original-url-display"></div>
+            <div class="short-url" id="short-url-display"></div>
+          </div>
+          <div class="action-buttons">
+            <button id="copy-btn" class="btn btn-copy">
+              <i class="fas fa-copy"></i> Copy Short URL
+            </button>
+            <button id="new-btn" class="btn btn-new">
+              <i class="fas fa-plus"></i> Create Another
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Features Section -->
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-bolt"></i>
+          </div>
+          <h3>Fast Redirection</h3>
+          <p>
+            Our short URLs redirect instantly to your destination, with minimal
+            latency for the best user experience.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3>Click Analytics</h3>
+          <p>
+            Track how many clicks your short links receive to measure the
+            effectiveness of your campaigns.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-lock"></i>
+          </div>
+          <h3>Secure Links</h3>
+          <p>
+            All shortened URLs are scanned for malware and use HTTPS for secure
+            redirection.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h3>Mobile Friendly</h3>
+          <p>Works perfectly on all devices from desktop to mobile.</p>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

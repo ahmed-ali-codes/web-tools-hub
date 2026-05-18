@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ecotrustia Solutions - Weight Converter</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Weight Converter</h1>
+        <p>
+          Instantly convert between kilograms, pounds, ounces, grams, and
+          stones. Perfect for cooking, fitness tracking, shipping calculations,
+          and more.
+        </p>
+      </div>
+    </section>
+
+    <!-- Weight Converter Section -->
+    <section class="section">
+      <div class="section-title">
+        <h2>Convert Weight Units</h2>
+      </div>
+      <div class="converter-container">
+        <div class="converter-grid">
+          <!-- Kilograms Converter -->
+          <div class="converter-card">
+            <h3><i class="fas fa-weight"></i> Kilograms</h3>
+            <div class="form-group">
+              <label for="kilograms">Enter Kilograms (kg)</label>
+              <input
+                type="number"
+                id="kilograms"
+                class="form-control"
+                placeholder="0"
+                step="0.01"
+              />
+            </div>
+            <div class="result-display">
+              <div class="result-item" id="kg-to-lb">Pounds: 0 lb</div>
+              <div class="result-item" id="kg-to-oz">Ounces: 0 oz</div>
+              <div class="result-item" id="kg-to-g">Grams: 0 g</div>
+              <div class="result-item" id="kg-to-st">Stones: 0 st</div>
+            </div>
+          </div>
+
+          <!-- Pounds Converter -->
+          <div class="converter-card">
+            <h3><i class="fas fa-weight-hanging"></i> Pounds</h3>
+            <div class="form-group">
+              <label for="pounds">Enter Pounds (lb)</label>
+              <input
+                type="number"
+                id="pounds"
+                class="form-control"
+                placeholder="0"
+                step="0.01"
+              />
+            </div>
+            <div class="result-display">
+              <div class="result-item" id="lb-to-kg">Kilograms: 0 kg</div>
+              <div class="result-item" id="lb-to-oz">Ounces: 0 oz</div>
+              <div class="result-item" id="lb-to-g">Grams: 0 g</div>
+              <div class="result-item" id="lb-to-st">Stones: 0 st</div>
+            </div>
+          </div>
+
+          <!-- Ounces Converter -->
+          <div class="converter-card">
+            <h3><i class="fas fa-balance-scale"></i> Ounces</h3>
+            <div class="form-group">
+              <label for="ounces">Enter Ounces (oz)</label>
+              <input
+                type="number"
+                id="ounces"
+                class="form-control"
+                placeholder="0"
+                step="0.01"
+              />
+            </div>
+            <div class="result-display">
+              <div class="result-item" id="oz-to-kg">Kilograms: 0 kg</div>
+              <div class="result-item" id="oz-to-lb">Pounds: 0 lb</div>
+              <div class="result-item" id="oz-to-g">Grams: 0 g</div>
+              <div class="result-item" id="oz-to-st">Stones: 0 st</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="converter-grid" style="margin-top: 2rem">
+          <!-- Grams Converter -->
+          <div class="converter-card">
+            <h3><i class="fas fa-vial"></i> Grams</h3>
+            <div class="form-group">
+              <label for="grams">Enter Grams (g)</label>
+              <input
+                type="number"
+                id="grams"
+                class="form-control"
+                placeholder="0"
+                step="0.1"
+              />
+            </div>
+            <div class="result-display">
+              <div class="result-item" id="g-to-kg">Kilograms: 0 kg</div>
+              <div class="result-item" id="g-to-lb">Pounds: 0 lb</div>
+              <div class="result-item" id="g-to-oz">Ounces: 0 oz</div>
+              <div class="result-item" id="g-to-st">Stones: 0 st</div>
+            </div>
+          </div>
+
+          <!-- Stones Converter -->
+          <div class="converter-card">
+            <h3><i class="fas fa-mountain"></i> Stones</h3>
+            <div class="form-group">
+              <label for="stones">Enter Stones (st)</label>
+              <input
+                type="number"
+                id="stones"
+                class="form-control"
+                placeholder="0"
+                step="0.01"
+              />
+            </div>
+            <div class="result-display">
+              <div class="result-item" id="st-to-kg">Kilograms: 0 kg</div>
+              <div class="result-item" id="st-to-lb">Pounds: 0 lb</div>
+              <div class="result-item" id="st-to-oz">Ounces: 0 oz</div>
+              <div class="result-item" id="st-to-g">Grams: 0 g</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Common Weights Section -->
+        <div class="common-weights">
+          <div class="section-title">
+            <h3>Common Weight Conversions</h3>
+          </div>
+          <div class="weights-grid">
+            <div class="weight-card">
+              <h3>1 Kilogram</h3>
+              <div class="weight-value">2.2046 lb</div>
+              <div class="weight-desc">Standard metric unit</div>
+            </div>
+            <div class="weight-card">
+              <h3>1 Pound</h3>
+              <div class="weight-value">16 oz</div>
+              <div class="weight-desc">Standard US/UK unit</div>
+            </div>
+            <div class="weight-card">
+              <h3>1 Ounce</h3>
+              <div class="weight-value">28.3495 g</div>
+              <div class="weight-desc">Common for small measurements</div>
+            </div>
+            <div class="weight-card">
+              <h3>1 Stone</h3>
+              <div class="weight-value">14 lb</div>
+              <div class="weight-desc">Common in UK for body weight</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

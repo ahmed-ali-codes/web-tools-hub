@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ecotrustia Solutions - Calories Calculator</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    
+
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Calories Calculator</h1>
+        <p>
+          Calculate your daily calorie needs based on your personal metrics and
+          activity level.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <h2>Calculate Your Calories</h2>
+      </div>
+      <div class="calories-calculator">
+        <div class="calculator-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="gender">Gender</label>
+              <div class="radio-group">
+                <div class="radio-option">
+                  <input
+                    type="radio"
+                    id="male"
+                    name="gender"
+                    value="male"
+                    checked
+                  />
+                  <label for="male">Male</label>
+                </div>
+                <div class="radio-option">
+                  <input
+                    type="radio"
+                    id="female"
+                    name="gender"
+                    value="female"
+                  />
+                  <label for="female">Female</label>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="age">Age (years)</label>
+              <input type="number" id="age" min="15" max="100" value="30" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="height">Height (cm)</label>
+              <input
+                type="number"
+                id="height"
+                min="100"
+                max="250"
+                value="170"
+              />
+            </div>
+            <div class="form-group">
+              <label for="weight">Weight (kg)</label>
+              <input type="number" id="weight" min="30" max="200" value="70" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Activity Level</label>
+            <div class="activity-levels">
+              <div class="activity-level">
+                <div>
+                  <input
+                    type="radio"
+                    id="sedentary"
+                    name="activity"
+                    value="1.2"
+                    checked
+                  />
+                  <label for="sedentary"
+                    >Sedentary (little or no exercise)</label
+                  >
+                </div>
+                <span>1.2x</span>
+              </div>
+              <div class="activity-level">
+                <div>
+                  <input
+                    type="radio"
+                    id="light"
+                    name="activity"
+                    value="1.375"
+                  />
+                  <label for="light"
+                    >Lightly active (light exercise 1-3 days/week)</label
+                  >
+                </div>
+                <span>1.375x</span>
+              </div>
+              <div class="activity-level">
+                <div>
+                  <input
+                    type="radio"
+                    id="moderate"
+                    name="activity"
+                    value="1.55"
+                  />
+                  <label for="moderate"
+                    >Moderately active (moderate exercise 3-5 days/week)</label
+                  >
+                </div>
+                <span>1.55x</span>
+              </div>
+              <div class="activity-level">
+                <div>
+                  <input
+                    type="radio"
+                    id="active"
+                    name="activity"
+                    value="1.725"
+                  />
+                  <label for="active"
+                    >Very active (hard exercise 6-7 days/week)</label
+                  >
+                </div>
+                <span>1.725x</span>
+              </div>
+              <div class="activity-level">
+                <div>
+                  <input
+                    type="radio"
+                    id="extreme"
+                    name="activity"
+                    value="1.9"
+                  />
+                  <label for="extreme"
+                    >Extremely active (very hard exercise & physical job)</label
+                  >
+                </div>
+                <span>1.9x</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="goal">Goal</label>
+            <select id="goal">
+              <option value="maintain">Maintain weight</option>
+              <option value="lose">Lose weight</option>
+              <option value="gain">Gain weight</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="results" id="results">
+          <div class="result-item">
+            <span class="label">BMI:</span>
+            <span class="value" id="bmi-value">-</span>
+          </div>
+          <div class="result-item">
+            <span class="label">BMI Category:</span>
+            <span class="value" id="bmi-category">-</span>
+          </div>
+          <div class="bmi-indicator">
+            <div class="bmi-marker" id="bmi-marker"></div>
+          </div>
+          <div class="bmi-labels">
+            <span>Underweight</span>
+            <span>Normal</span>
+            <span>Overweight</span>
+            <span>Obese</span>
+          </div>
+
+          <div class="result-item">
+            <span class="label">BMR (Basal Metabolic Rate):</span>
+            <span class="value" id="bmr-value">-</span>
+          </div>
+          <div class="result-item">
+            <span class="label">Daily Maintenance Calories:</span>
+            <span class="value" id="calories-value">-</span>
+          </div>
+          <div class="result-item">
+            <span class="label">Recommended Daily Calories:</span>
+            <span class="value" id="goal-calories">-</span>
+          </div>
+        </div>
+
+        <div class="action-buttons">
+          <button id="calculate-btn" class="btn btn-calculate">
+            <i class="fas fa-calculator"></i> Calculate
+          </button>
+          <button id="reset-btn" class="btn btn-reset">
+            <i class="fas fa-redo"></i> Reset
+          </button>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
